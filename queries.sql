@@ -53,4 +53,9 @@ select orders.orderid, count(orderdetails.productid) as ItemCount
     from orders
     join orderdetails on orders.orderid = orderdetails.orderid
     group by orders.orderid;
+
+ -- Stretch - add step
+
+ INSERT INTO steps (instructions, scheme_id, step_number)
+  VALUES ('profit', 1, 4);   
     

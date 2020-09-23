@@ -114,4 +114,16 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+router.post('/:id/addStep', (req, res)=>{
+  const {id} = req.params;
+  const step = req.body;
+  Schemes.addStep(step, id)
+  .then(step =>{
+    res.status(201).json({message: "step has been added"})
+  })
+  .catch(error=>{
+    res.status(400).json({message: 'unable to add step'})
+  })
+});
+
 module.exports = router;
